@@ -1,0 +1,24 @@
+package helper;
+
+/**
+ * Created by Tonni on 29/04/2018.
+ */
+
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
+/**
+ * Created by Abhi on 23 Jun 2017 023.
+ * Checks whether the device is connected to internet or not
+ */
+
+public class CheckNetworkStatus {
+
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+}
